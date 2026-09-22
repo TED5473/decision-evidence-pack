@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>48h Decision Evidence Pack · IL Leave-behind</title>
+<style>
+  :root{
+    --bg:#07090c; --panel:#10151c; --line:#243041; --muted:#8b96a8;
+    --text:#f3f5f7; --accent:#3ddc97; --warn:#ffb020; --danger:#ff5a3d;
+    --lynk:#5b8cff; --comp:#a78bfa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#020305;color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .page{width:1280px;height:720px;background:linear-gradient(160deg,#0b0f14 0%,#121820 55%,#0a0e13 100%);
+    border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;
+    box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .page::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 420px at 90% -10%,rgba(61,220,151,.12),transparent 60%),
+    radial-gradient(700px 380px at -10% 110%,rgba(91,140,255,.10),transparent 55%);pointer-events:none}
+  .rail{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--accent),var(--lynk))}
+  header{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;
+    padding:28px 36px 12px 36px}
+  .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:28px;font-weight:750;margin-top:6px;letter-spacing:-.02em}
+  .sub{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.45}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .badge{font-size:11px;font-weight:700;padding:6px 10px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(255,255,255,.03)}
+  .badge.open{color:var(--accent);border-color:rgba(61,220,151,.35)}
+  .badge.pending{color:var(--warn);border-color:rgba(255,176,32,.4)}
+  .badge.gate{color:#ffd7a8;border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.08)}
+  .grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .95fr .95fr;
+    gap:14px;padding:8px 36px 20px}
+  .card{background:rgba(16,21,28,.92);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;min-height:0}
+  .card h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .ladder{display:flex;flex-direction:column;gap:10px}
+  .row{display:grid;grid-template-columns:1.2fr .9fr auto;gap:8px;align-items:center;
+    padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid transparent}
+  .row.hero{border-color:rgba(91,140,255,.45);background:rgba(91,140,255,.08)}
+  .name{font-size:13px;font-weight:700}
+  .note{font-size:11px;color:var(--muted);margin-top:2px}
+  .price{font-variant-numeric:tabular-nums;font-size:15px;font-weight:750;text-align:right;direction:ltr;unicode-bidi:isolate}
+  .tag{font-size:10px;font-weight:700;padding:3px 7px;border-radius:999px}
+  .tag.ok{background:rgba(61,220,151,.12);color:var(--accent)}
+  .tag.red{background:rgba(255,90,61,.12);color:var(--danger)}
+  .tag.dim{background:rgba(255,255,255,.06);color:var(--muted)}
+  ul.clean{list-style:none;display:flex;flex-direction:column;gap:10px}
+  ul.clean li{position:relative;padding-left:14px;font-size:13px;line-height:1.4;color:#e7ebf0}
+  ul.clean li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .actions{display:flex;flex-direction:column;gap:10px}
+  .action{padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .action b{display:block;font-size:13px;margin-bottom:4px}
+  .action span{font-size:12px;color:var(--muted);line-height:1.4}
+  .n{display:inline-flex;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;
+    font-size:10px;font-weight:800;margin-right:6px;background:var(--accent);color:#06110c}
+  footer{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;
+    padding:0 36px 22px;color:var(--muted);font-size:11px;gap:16px}
+  footer strong{color:var(--text)}
+  .sku{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--accent)}
+</style>
+</head>
+<body>
+  <div class="page" role="document">
+    <div class="rail"></div>
+    <header>
+      <div>
+        <div class="kicker">48h Decision Evidence Pack · Warm sample</div>
+        <h1>Israel · 02 Pro vs 3 comps</h1>
+        <p class="sub">Importer / distributor leave-behind · ILS only · dual-source or red · not a marketing site</p>
+      </div>
+      <div class="badges">
+        <span class="badge open">公开口径</span>
+        <span class="badge pending">待核验 / 单源</span>
+        <span class="badge gate">List-price confirmed · 9/22</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Entry ladder · ILS <span style="direction:ltr;unicode-bidi:isolate">(dir=ltr)</span></h2>
+        <div class="ladder">
+          <div class="row hero">
+            <div><div class="name">Lynk &amp; Co 02 Pro</div><div class="note">本品 · meet-the-02 · Halo ₪169,900</div></div>
+            <div class="price">₪159,900</div>
+            <span class="tag ok">9/22 无变</span>
+          </div>
+          <div class="row">
+            <div><div class="name">Chery FX EV Sense</div><div class="note">当地名 · 官价表</div></div>
+            <div class="price">₪151,990</div>
+            <span class="tag ok">9/22 无变</span>
+          </div>
+          <div class="row">
+            <div><div class="name">Xpeng G6 Core RWD</div><div class="note">当地名 · 官价表</div></div>
+            <div class="price">₪204,990</div>
+            <span class="tag ok">9/22 无变</span>
+          </div>
+          <div class="row">
+            <div><div class="name">BYD Seal U DM-i Boost</div><div class="note">≠ Song PLUS · 从价口径</div></div>
+            <div class="price">₪199,990</div>
+            <span class="tag dim">从价</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Trap wall · naming &amp; promo</h2>
+        <ul class="clean">
+          <li><strong>FX HEV ≠ FX EV</strong> — 节日现金 ₪144,990 只贴 HEV Comfort，<strong>禁进</strong> EV 从价梯；FX EV 对打仍 Sense ₪151,990。</li>
+          <li><strong>从价禁混 0km/租赁</strong> — G6 进口商 0km ₪211,990、Seal U 租赁 יד 1 ₪179,500 <strong>不进价梯</strong>；从价只认 Boost ₪199,990。作废旧 ₪185,990。</li>
+          <li><strong>Seal U ≠ Song PLUS</strong> — IL Ocean 命名；客户页禁止中国训名。</li>
+          <li><strong>9/15 闸门</strong> — Chery 首页「从」已回价目表；9/8 促价不进结论。</li>
+          <li><strong>02 价冲突已消解</strong> — 采 model 页 ₪159,900，不采旧价目文 ₪171,900。</li>
+          <li><strong>0km ₪185,990</strong> — Seal U 单源 → 红栏，不进对打。</li>
+          <li><strong>销量气泡待补</strong> — Lynk 用 1–8 · 2,377（同比 +23.5%，协会经媒体）；<strong>禁止</strong>画 1–5 · 1,218；缺第二权威不进面积。</li>
+          <li>空抓取 ≠ 无车；当地币隔离，不做 CNY 混贴。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>3 decision actions</h2>
+        <div class="actions">
+          <div class="action"><b><span class="n">1</span>对打窗改「从价」</b><span>9/15 前促销对打已失效；Pack 结论分栏：截止前叙事 / 截止后从价复核。</span></div>
+          <div class="action"><b><span class="n">2</span>卡位 FX，不追 G6</b><span>02 Pro 仍低于 G6 ~₪45k；对 FX Sense 溢价约 ₪7.9k — 讲配置与轴长比，不贴静态促差。</span></div>
+          <div class="action"><b><span class="n">3</span>Seal U 只比 Boost 从价</b><span>Boost ₪199,990 双源从价可进；Comfort/Design 与 0km 价缺第二源则标红。</span></div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div><span class="sku">SKU · 48h Decision Evidence Pack</span> · battlefield <strong>IL</strong> · sample from <strong>israel-final-v2</strong> + CW 9/12 gate</div>
+      <div>Price refresh <strong>2026-09-22 CST</strong>: dual-source list unchanged · Full client HTML after dual-source pass → Report Master · this page = warm ping only<span id="price-refresh-2026-09-22" hidden></span></div>
+    </footer>
+  </div>
+</body>
+</html>

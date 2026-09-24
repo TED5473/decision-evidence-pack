@@ -63,7 +63,7 @@
       <a class="cta" id="pay-cta" href="https://buy.stripe.com/cNi14g6mB54w748dwS7ok00">Pay · start 48h clock</a>
       <a class="cta ghost" href="#intake">After pay · send focus</a>
     </div>
-    <p class="note" id="pay-note">Stripe Payment Link pending one-time Connect authorize. CTA is a placeholder until the live link is pasted here.</p>
+    <p class="note" id="pay-note">Live Stripe checkout · $499 · 48h clock starts on successful payment.</p>
 
     <div class="hygiene">
       Channel hygiene: list / from-price ≠ 0km promo ≠ lease/יד1. We never mix channels in the entry ladder.
@@ -143,6 +143,9 @@
           note.textContent = 'Stripe Payment Link not live yet — paste the live buy.stripe.com URL into this CTA.';
           note.style.color = '#ffb020';
         });
+      } else if (cta && note) {
+        note.textContent = 'Live Stripe checkout · $499 · 48h clock starts on successful payment.';
+        note.style.color = '#7dffa3';
       } else if (cta && note) {
         note.textContent = 'Live Stripe checkout · $499 · 48h clock starts on successful payment.';
         note.style.color = '#7dffa3';

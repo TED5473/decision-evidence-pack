@@ -60,7 +60,7 @@
 
     <div class="price-row">
       <div class="price">$499 <small>/ ¥3,500 trial</small></div>
-      <a class="cta" id="pay-cta" href="PAYMENT_LINK_PLACEHOLDER">Pay · start 48h clock</a>
+      <a class="cta" id="pay-cta" href="https://buy.stripe.com/cNi14g6mB54w748dwS7ok00">Pay · start 48h clock</a>
       <a class="cta ghost" href="#intake">After pay · send focus</a>
     </div>
     <p class="note" id="pay-note">Stripe Payment Link pending one-time Connect authorize. CTA is a placeholder until the live link is pasted here.</p>
@@ -130,7 +130,7 @@
 
     <footer>
       <p><span class="sku">IL Decision Evidence Pack</span> · public market info only · not personalized investment advice · revenue not claimed until Stripe settles.</p>
-      <p style="margin-top:6px">Offer: <code>OFFER.md</code> · Fulfill SOP: <code>AUTO_FULFILL.md</code> · Sample prices refreshed 2026-09-22 CST (dual-source unchanged).</p>
+      <p style="margin-top:6px">Offer: <code>OFFER.md</code> · Fulfill SOP: <code>AUTO_FULFILL.md</code> · Pay live 2026-09-24 CST · sample prices dual-source unchanged since 2026-09-22.</p>
     </footer>
   </div>
   <script>
@@ -140,9 +140,12 @@
       if (cta && cta.getAttribute('href') === 'PAYMENT_LINK_PLACEHOLDER') {
         cta.addEventListener('click', function (e) {
           e.preventDefault();
-          note.textContent = 'Stripe Payment Link not live yet — one-time Connect authorize still needed. Reply with focus after pay once link is pasted.';
+          note.textContent = 'Stripe Payment Link not live yet — paste the live buy.stripe.com URL into this CTA.';
           note.style.color = '#ffb020';
         });
+      } else if (cta && note) {
+        note.textContent = 'Live Stripe checkout · $499 · 48h clock starts on successful payment.';
+        note.style.color = '#7dffa3';
       }
       // Optional local bookings.json note for operators (does not persist on static host)
       document.getElementById('focus-form').addEventListener('submit', function () {
